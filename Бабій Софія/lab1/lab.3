@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main(void)
+{
+    int n = 57;
+    double x = 12345.6789;
+
+    printf("Десяткове:      %d\n", n);
+    printf("Двійкове:     %b\n", n);
+    printf("Вісімкове:      %o\n", n);
+    printf("Шістнадцяткове: %x\n", n);
+
+    printf("\nЗ плаваючою комою (%%f): %f\n", x);
+    printf("Експоненційна (%%e):     %e\n", x);
+    printf("Гнучка (%%g):            %g\n", x);
+
+    char символ = 'K';
+    char символи [20] = "Sofia";
+    printf("символ: %c\n", символ);
+    printf("стрічка: %s\n", символи);
+    printf("Index: %p\n", &символ);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main(void)
+{
+    char last_name[50];
+    char init[10];
+    char mail[50];
+    char fav_color[30];
+
+    printf("Last name: ");
+    scanf("%s", last_name);
+    printf("Initials: ");
+    scanf("%s", init);
+    printf("E-mail: ");
+    scanf("%s", mail);
+    printf("Favorite color: ");
+    scanf("%s", fav_color);
+
+    printf("\n%-4s | %-15s | %-8s | %-28s | %-12s\n",
+           "No", "Last name", "Initials", "E-mail", "Color");
+    printf("-----+-----------------+----------+------------------------------+-------------\n");
+    printf("%-4d | %-15s | %-8s | %-28s | %-12s\n",
+           1, last_name, init, mail, fav_color);
