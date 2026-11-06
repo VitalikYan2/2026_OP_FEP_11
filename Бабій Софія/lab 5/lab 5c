@@ -1,0 +1,122 @@
+#include <stdio.h>
+
+int main(void) {
+    int a, b;
+
+    printf("Введіть перше число: ");
+    scanf("%d", &a);
+    printf("Введіть друге число: ");
+    scanf("%d", &b);
+
+    a > b ? printf("%d більше за %d\n", a, b) :
+    (a < b ? printf("%d менше за %d\n", a, b) :
+             printf("Числа рівні\n"));
+
+    return 0;
+}
+
+
+
+
+
+#include <stdio.h>
+
+int main(void) {
+    int a, b, c;
+
+    printf("Введіть три сторони (наприклад 3 4 5): ");
+    scanf("%d %d %d", &a, &b, &c);
+
+    if (a + b <= c || a + c <= b || b + c <= a) {
+        printf("Такого трикутника не існує!\n");
+        return 0;
+    }
+
+    if (a == b && b == c)
+        printf("Рівносторонній\n");
+    else if (a == b || b == c || a == c)
+        printf("Рівнобедрений\n");
+    else
+        printf("Різносторонній\n");
+
+    if (a*a + b*b == c*c || a*a + c*c == b*b || b*b + c*c == a*a)
+        printf("Прямокутний\n");
+    else if (a*a + b*b > c*c && a*a + c*c > b*b && b*b + c*c > a*a)
+        printf("Гострокутний\n");
+    else
+        printf("Тупокутний\n");
+
+    return 0;
+}
+
+
+
+
+
+
+#include <stdio.h>
+
+int main(void) {
+    int n, сотні, десятки, одиниці;
+
+    printf("Введіть тризначне число: ");
+    scanf("%d", &n);
+
+    сотні = n / 100;
+    десятки = n / 10 % 10;
+    одиниці = n % 10;
+
+    switch (сотні) {
+        case 1: printf("сто ");       break;
+        case 2: printf("двісті ");    break;
+        case 3: printf("триста ");    break;
+        case 4: printf("чотириста "); break;
+        case 5: printf("п'ятсот ");   break;
+        case 6: printf("шістсот ");   break;
+        case 7: printf("сімсот ");    break;
+        case 8: printf("вісімсот ");  break;
+        case 9: printf("дев'ятсот "); break;
+    }
+
+    if (десятки == 1) {
+        switch (n % 100) {
+            case 10: printf("десять");        break;
+            case 11: printf("одинадцять");    break;
+            case 12: printf("дванадцять");    break;
+            case 13: printf("тринадцять");    break;
+            case 14: printf("чотирнадцять");  break;
+            case 15: printf("п'ятнадцять");   break;
+            case 16: printf("шістнадцять");   break;
+            case 17: printf("сімнадцять");    break;
+            case 18: printf("вісімнадцять");  break;
+            case 19: printf("дев'ятнадцять"); break;
+        }
+    }
+    else {
+       
+        switch (десятки) {
+            case 2: printf("двадцять ");   break;
+            case 3: printf("тридцять ");   break;
+            case 4: printf("сорок ");      break;
+            case 5: printf("п'ятдесят ");  break;
+            case 6: printf("шістдесят ");  break;
+            case 7: printf("сімдесят ");   break;
+            case 8: printf("вісімдесят "); break;
+            case 9: printf("дев'яносто "); break;
+        }
+        switch (одиниці) {
+            case 1: printf("один");    break;
+            case 2: printf("два");     break;
+            case 3: printf("три");     break;
+            case 4: printf("чотири");  break;
+            case 5: printf("п'ять");   break;
+            case 6: printf("шість");   break;
+            case 7: printf("сім");     break;
+            case 8: printf("вісім");   break;
+            case 9: printf("дев'ять"); break;
+        }
+    }
+
+    printf("\n");
+    return 0;
+}
